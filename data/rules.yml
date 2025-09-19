@@ -1,0 +1,206 @@
+version: '3.1'
+
+rules:
+- rule: Handle out-of-scope questions
+  steps:
+  - action: action_set_language
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+- rule: Say goodbye anytime user says goodbye
+  steps:
+  - action: action_set_language
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Answer admissions question directly
+  steps:
+  - action: action_set_language
+  - intent: admissions
+  - action: utter_admissions
+
+- rule: Answer fee structure question directly
+  steps:
+  - action: action_set_language
+  - intent: fee_structure
+  - action: utter_fee_structure
+
+- rule: Answer accommodation question directly
+  steps:
+  - action: action_set_language
+  - intent: accommodation
+  - action: utter_accommodation
+
+- rule: Answer branch of study question directly
+  steps:
+  - action: action_set_language
+  - intent: branch_of_study
+  - action: utter_branch_of_study
+
+- rule: Answer calendar question directly
+  steps:
+  - action: action_set_language
+  - intent: calendar
+  - action: utter_calendar
+
+- rule: Answer course structure question directly
+  steps:
+  - action: action_set_language
+  - intent: course_structure
+  - action: utter_course_structure
+
+- rule: Answer dress code question directly
+  steps:
+  - action: action_set_language
+  - intent: dress_code
+  - action: utter_dress_code
+
+- rule: Answer faculty question directly
+  steps:
+  - action: action_set_language
+  - intent: faculty
+  - action: utter_faculty
+
+- rule: Answer food question directly
+  steps:
+  - action: action_set_language
+  - intent: food
+  - action: utter_food
+
+- rule: Answer holidays question directly
+  steps:
+  - action: action_set_language
+  - intent: holidays
+  - action: utter_holidays
+
+- rule: Answer hostel question directly
+  steps:
+  - action: action_set_language
+  - intent: hostel
+  - action: utter_hostel
+
+- rule: Answer jobs question directly
+  steps:
+  - action: action_set_language
+  - intent: jobs
+  - action: utter_jobs
+
+- rule: Answer library question directly
+  steps:
+  - action: action_set_language
+  - intent: library
+  - action: utter_library
+
+- rule: Answer marks question directly
+  steps:
+  - action: action_set_language
+  - intent: marks
+  - action: utter_marks
+
+- rule: Answer marksheet question directly
+  steps:
+  - action: action_set_language
+  - intent: marksheet
+  - action: utter_marksheet
+
+- rule: Answer parent query question directly
+  steps:
+  - action: action_set_language
+  - intent: parent_query
+  - action: utter_parent_query
+
+- rule: Answer placements question directly
+  steps:
+  - action: action_set_language
+  - intent: placements
+  - action: utter_placements
+
+- rule: Answer recruitment question directly
+  steps:
+  - action: action_set_language
+  - intent: recruitment
+  - action: utter_recruitment
+
+- rule: Answer results question directly
+  steps:
+  - action: action_set_language
+  - intent: results
+  - action: utter_results
+
+- rule: Answer studies question directly
+  steps:
+  - action: action_set_language
+  - intent: studies
+  - action: utter_studies
+
+- rule: Answer syllabus question directly
+  steps:
+  - action: action_set_language
+  - intent: syllabus
+  - action: utter_syllabus
+
+- rule: Answer teaching question directly
+  steps:
+  - action: action_set_language
+  - intent: teaching
+  - action: utter_teaching
+
+- rule: Answer timetable question directly
+  steps:
+  - action: action_set_language
+  - intent: timetable
+  - action: utter_timetable
+
+- rule: Answer transportation question directly
+  steps:
+  - action: action_set_language
+  - intent: transportation
+  - action: utter_transportation
+
+- rule: Answer uniform question directly
+  steps:
+  - action: action_set_language
+  - intent: uniform
+  - action: utter_uniform
+
+- rule: Answer years of study question directly
+  steps:
+  - action: action_set_language
+  - intent: years_of_study
+  - action: utter_years_of_study
+
+- rule: Answer ID card question directly
+  steps:
+  - action: action_set_language
+  - intent: id_card
+  - action: utter_id_card
+
+- rule: Answer wifi question
+  steps:
+    - action: action_set_language
+    - intent: wifi
+    - action: utter_wifi
+
+- rule: Answer medical facility question
+  steps:
+    - action: action_set_language
+    - intent: medical_facility
+    - action: utter_medical_facility
+
+- rule: Answer events question
+  steps:
+    - action: action_set_language
+    - intent: events
+    - action: utter_events
+
+- rule: Answer sports question
+  steps:
+    - action: action_set_language
+    - intent: sports
+    - action: utter_sports
+
+- rule: Answer college timing question
+  steps:
+    - action: action_set_language
+    - intent: college_timing
+    - action: utter_college_timing

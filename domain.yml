@@ -1,0 +1,655 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - admissions
+  - fee_structure
+  - accommodation
+  - branch_of_study
+  - calendar
+  - course_structure
+  - dress_code
+  - faculty
+  - food
+  - holidays
+  - hostel
+  - jobs
+  - library
+  - marks
+  - marksheet
+  - parent_query
+  - placements
+  - recruitment
+  - results
+  - studies
+  - syllabus
+  - teaching
+  - timetable
+  - transportation
+  - uniform
+  - years_of_study
+  - help
+  - affirm
+  - deny
+  - fallback_intent
+  - nlu_fallback
+  - id_card
+  - wifi
+  - medical_facility
+  - events
+  - sports
+  - college_timing
+
+slots:
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+actions:
+  - action_set_language
+
+responses:
+
+  utter_goodbye:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Goodbye! Have a nice day."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "अलविदा! आपका दिन शुभ हो।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "വിട! നല്ല ദിവസം ആശംസിക്കുന്നു."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "వీడ్కోలు! మీ రోజు శుభంగా గడవాలి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಿದಾಯ! ನಿಮಗೆ ಶುಭದಿನವಾಗಿರಲಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "பிரியாவிடை! உங்களுக்கு நல்ல நாள் அமையட்டும்."
+    - text: "Goodbye! Have a nice day."
+
+  utter_greet:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Hello! How can I assist you today?"
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "नमस्ते! मैं आज आपकी कैसे मदद कर सकता हूँ?"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "നമസ്കാരം! ഇന്ന് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കാം?"
+    - condition: [{name: language, type: slot, value: te}]
+      text: "హలో! నేను ఈ రోజు మీకు ఎలా సహాయం చేయగలను?"
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಹಲೋ! ನಾನು ಇಂದು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?"
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "வணக்கம்! இன்று நான் உங்களுக்கு எப்படி உதவலாம்?"
+    - text: "Hello! How can I assist you today?"
+
+  utter_ask_course:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Which course are you interested in? (B.Tech, M.Tech, B.Sc)"
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "आप किस पाठ्यक्रम में रुचि रखते हैं? (B.Tech, M.Tech, B.Sc)"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "നിങ്ങൾക്ക് ഏത് കോഴ്സിൽ താൽപ്പര്യമുണ്ട്? (B.Tech, M.Tech, B.Sc)"
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మీరు ఏ కోర్సులో ఆసక్తి చూపుతున్నారు? (B.Tech, M.Tech, B.Sc)"
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನೀವು ಯಾವ ಕೋರ್ಸ್‌ನಲ್ಲಿ ಆಸಕ್ತರಾಗಿದ್ದೀರಿ? (B.Tech, M.Tech, B.Sc)"
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "நீங்கள் எந்த பாடத்தில் ஆர்வமாக உள்ளீர்கள்? (B.Tech, M.Tech, B.Sc)"
+    - text: "Which course are you interested in?"
+
+  utter_help:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "I can help you with admissions, fees, courses, timetable, ID card, and more. What would you like to ask?"
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "मैं आपको प्रवेश, शुल्क, पाठ्यक्रम, समय सारणी, आईडी कार्ड और अन्य चीज़ों में मदद कर सकता हूँ। आप क्या पूछना चाहेंगे?"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞാൻ പ്രവേശനം, ഫീസ്, കോഴ്സുകൾ, ടൈംടേബിൾ, ഐഡി കാർഡ് എന്നിവയിൽ നിങ്ങളെ സഹായിക്കാം. നിങ്ങൾ എന്താണ് ചോദിക്കാൻ ആഗ്രഹിക്കുന്നത്?"
+    - condition: [{name: language, type: slot, value: te}]
+      text: "నేను ప్రవేశాలు, ఫీజులు, కోర్సులు, టైమ్‌టేబుల్, ఐడి కార్డు మరియు మరిన్నింటిలో మీకు సహాయం చేయగలను. మీరు ఏమి అడగాలనుకుంటున్నారు?"
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಪ್ರವೇಶ, ಶುಲ್ಕ, ಕೋರ್ಸ್‌ಗಳು, ವೇಳಾಪಟ್ಟಿ, ಐಡಿ ಕಾರ್ಡ್ ಮತ್ತು ಇನ್ನಿತರ ವಿಷಯಗಳಲ್ಲಿ ನಾನು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಬಹುದು. ನೀವು ಏನು ಕೇಳಲು ಬಯಸುತ್ತೀರಿ?"
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "நான் சேர்க்கைகள், கட்டணங்கள், பாடநெறிகள், நேர அட்டவணை, அடையாள அட்டை மற்றும் பலவற்றில் உங்களுக்கு உதவ முடியும். நீங்கள் என்ன கேட்க விரும்புகிறீர்கள்?"
+    - text: "I can help you with many topics. What would you like to ask?"
+
+  utter_affirm:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Great!"
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "बहुत बढ़िया!"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ശരി!"
+    - condition: [{name: language, type: slot, value: te}]
+      text: "అద్భుతం!"
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಅದ್ಭುತ!"
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "அருமை!"
+    - text: "Great!"
+
+  utter_deny:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Okay, no problem."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "ठीक है, कोई समस्या नहीं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ശരി, പ്രശ്നമൊന്നുമില്ല."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "పర్లేదు, ఎలాంటి సమస్య లేదు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಸರಿ, ಯಾವುದೇ ಸಮಸ್ಯೆ ಇಲ್ಲ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "சரி, பிரச்சினையில்லை."
+    - text: "Okay, no problem."
+
+  utter_default:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Sorry, I didn’t quite understand that. Could you rephrase?"
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "माफ़ कीजिए, मैं समझ नहीं पाया। क्या आप इसे दोबारा कह सकते हैं?"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ക്ഷമിക്കണം, അത് എനിക്ക് മനസ്സിലായില്ല. ദയവായി വീണ്ടും പറയാമോ?"
+    - condition: [{name: language, type: slot, value: te}]
+      text: "క్షమించండి, నేను అది సరిగా అర్థం చేసుకోలేకపోయాను. దయచేసి మళ్లీ చెప్పగలరా?"
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕ್ಷಮಿಸಿ, ನಾನು ಅದನ್ನು ಸರಿಯಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಹೇಳಬಹುದೆ?"
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மன்னிக்கவும், எனக்கு அது புரியவில்லை. தயவுசெய்து மறுபடியும் சொல்ல முடியுமா?"
+    - text: "Sorry, I didn’t quite understand that."
+
+  utter_out_of_scope:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Sorry, I can’t answer that. Please ask about admissions, courses, or campus services."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "माफ़ कीजिए, मैं इसका उत्तर नहीं दे सकता। कृपया प्रवेश, पाठ्यक्रम या परिसर सेवाओं के बारे में पूछें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ക്ഷമിക്കണം, ഞാൻ അതിന് ഉത്തരം നൽകാനാകില്ല. ദയവായി അഡ്മിഷൻ, കോഴ്സ് അല്ലെങ്കിൽ ക്യാമ്പസ് സേവനങ്ങളെ കുറിച്ച് ചോദിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "క్షమించండి, నేను దానికి సమాధానం ఇవ్వలేను. దయచేసి అడ్మిషన్లు, కోర్సులు లేదా క్యాంపస్ సేవల గురించి అడగండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕ್ಷಮಿಸಿ, ನಾನು ಅದಕ್ಕೆ ಉತ್ತರ ನೀಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಪ್ರವೇಶ, ಪಠ್ಯಕ್ರಮಗಳು ಅಥವಾ ಕ್ಯಾಂಪಸ್ ಸೇವೆಗಳ ಬಗ್ಗೆ ಕೇಳಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மன்னிக்கவும், அதற்கு நான் பதிலளிக்க முடியாது. தயவுசெய்து சேர்க்கைகள், பாடங்கள் அல்லது வளாக சேவைகள் பற்றி கேளுங்கள்."
+    - text: "Sorry, I can’t answer that. Please ask about admissions, courses, or campus services."
+
+  utter_wifi:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Yes, Wi-Fi facilities are available throughout the campus."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हाँ, पूरे कैंपस में वाई-फाई सुविधा उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "അതെ, ക്യാമ്പസിന്റെ മുഴുവൻ ഭാഗത്തും വൈ-ഫൈ സൗകര്യം ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "అవును, క్యాంపస్ అంతటా వై-ఫై సౌకర్యాలు అందుబాటులో ఉన్నాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಹೌದು, ಸಂಪೂರ್ಣ ಕ್ಯಾಂಪಸ್‌ನಲ್ಲಿ ವೈ-ಫೈ ಸೌಲಭ್ಯ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "ஆம், முழு வளாகத்திலும் Wi-Fi வசதிகள் உள்ளன."
+
+  utter_medical_facility:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The campus has medical facilities with a health center."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कैंपस में स्वास्थ्य केंद्र के साथ चिकित्सा सुविधाएँ उपलब्ध हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ക്യാമ്പസില്‍ ഹെല്‍ത്ത് സെന്ററുമായി മെഡിക്കല്‍ സൗകര്യങ്ങള്‍ ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "క్యాంపస్‌లో ఆరోగ్య కేంద్రంతో వైద్య సౌకర్యాలు ఉన్నాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕ್ಯಾಂಪಸ್‌ನಲ್ಲಿ ಆರೋಗ್ಯ ಕೇಂದ್ರದೊಂದಿಗೆ ವೈದ್ಯಕೀಯ ಸೌಲಭ್ಯಗಳಿವೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "வளாகத்தில் ஒரு சுகாதார மையத்துடன் மருத்துவ வசதிகள் உள்ளன."
+
+  utter_events:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Our college organizes cultural, technical, and sports events regularly."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हमारा कॉलेज नियमित रूप से सांस्कृतिक, तकनीकी और खेलकूद कार्यक्रम आयोजित करता है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞങ്ങളുടെ കോളേജ് സാംസ്കാരിക, സാങ്കേതിക, കായിക പരിപാടികൾ പതിവായി സംഘടിപ്പിക്കുന്നു."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మా కళాశాలలో సాంస్కృతిక, సాంకేతిక మరియు క్రీడా కార్యక్రమాలు క్రమం తప్పకుండా నిర్వహించబడతాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಮ್ಮ ಕಾಲೇಜು ನಿಯಮಿತವಾಗಿ ಸಾಂಸ್ಕೃತಿಕ, ತಾಂತ್ರಿಕ ಮತ್ತು ಕ್ರೀಡಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸುತ್ತದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "எங்கள் கல்லூரி கலாச்சார, தொழில்நுட்ப மற்றும் விளையாட்டு நிகழ்ச்சிகளை தவறாமல் நடத்துகிறது."
+
+  utter_sports:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The college provides sports facilities including cricket, football, and indoor games."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कॉलेज क्रिकेट, फुटबॉल और इनडोर गेम्स सहित खेल सुविधाएँ प्रदान करता है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "കോളേജിൽ ക്രിക്കറ്റ്, ഫുട്ബോൾ, ഇൻഡോർ ഗെയിമുകൾ ഉൾപ്പെടെ കായിക സൗകര്യങ്ങൾ ഉണ്ട്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "కళాశాలలో క్రికెట్, ఫుట్‌బాల్ మరియు ఇండోర్ గేమ్స్ వంటి క్రీడా సౌకర్యాలు ఉన్నాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕಾಲೇಜಿನಲ್ಲಿ ಕ್ರಿಕೆಟ್, ಫುಟ್‌ಬಾಲ್ ಮತ್ತು ಒಳಾಂಗಣ ಆಟಗಳನ್ನು ಒಳಗೊಂಡಂತೆ ಕ್ರೀಡಾ ಸೌಲಭ್ಯಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "கல்லூரி கிரிக்கெட், கால்பந்து மற்றும் உள்நாட்டு விளையாட்டுகள் உள்ளிட்ட விளையாட்டு வசதிகளை வழங்குகிறது."
+
+  utter_college_timing:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "College timings are 9:00 AM to 4:00 PM, Monday to Friday."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कॉलेज का समय सोमवार से शुक्रवार, सुबह 9 बजे से शाम 4 बजे तक है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "കോളേജിന്റെ സമയം തിങ്കളാഴ്ച മുതൽ വെള്ളിയാഴ്ച വരെ രാവിലെ 9 മുതൽ വൈകുന്നേരം 4 വരെ."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "కళాశాల సమయాలు సోమవారం నుండి శుక్రవారం వరకు ఉదయం 9 నుండి మధ్యాహ్నం 4 వరకు ఉంటాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕಾಲೇಜಿನ ಸಮಯ ಸೋಮವಾರದಿಂದ ಶುಕ್ರವಾರದವರೆಗೆ ಬೆಳಿಗ್ಗೆ 9ರಿಂದ ಮಧ್ಯಾಹ್ನ 4ರವರೆಗೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "கல்லூரி நேரம் திங்கள் முதல் வெள்ளி வரை காலை 9:00 மணி முதல் மாலை 4:00 மணி வரை."
+
+
+  utter_admissions:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Admission details are available on the admissions page of the website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "प्रवेश विवरण वेबसाइट के प्रवेश पृष्ठ पर उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "പ്രവേശന വിവരങ്ങൾ വെബ്സൈറ്റിലെ അഡ്മിഷൻസ് പേജിൽ ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ప్రవేశ వివరాలు వెబ్‌సైట్‌లోని అడ్మిషన్స్ పేజీలో అందుబాటులో ఉన్నాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಪ್ರವೇಶ ವಿವರಗಳು ವೆಬ್‌ಸೈಟ್‌ನ ಪ್ರವೇಶ ಪುಟದಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "சேர்க்கை விவரங்கள் இணையதளத்தின் சேர்க்கை பக்கத்தில் கிடைக்கின்றன."
+    - text: "Admission details are available on the admissions page of the website."
+
+  utter_fee_structure:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The fee structure varies by course. Please visit the official website or contact the admin office."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "फीस संरचना पाठ्यक्रम के अनुसार बदलती है। कृपया आधिकारिक वेबसाइट देखें या प्रशासन कार्यालय से संपर्क करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഫീസ് ഘടന കോഴ്സ് അനുസരിച്ച് വ്യത്യാസപ്പെടുന്നു. ഔദ്യോഗിക വെബ്സൈറ്റ് സന്ദർശിക്കുക അല്ലെങ്കിൽ അഡ്മിൻ ഓഫീസുമായി ബന്ധപ്പെടുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ఫీజు నిర్మాణం కోర్సు ఆధారంగా మారుతుంది. దయచేసి అధికారిక వెబ్‌సైట్‌ను సందర్శించండి లేదా కార్యాలయాన్ని సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಶುಲ್ಕ ವಿನ್ಯಾಸವು ಕೋರ್ಸ್ ಪ್ರಕಾರ ಬದಲಾಗುತ್ತದೆ. ದಯವಿಟ್ಟು ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ ಅಥವಾ ಆಡಳಿತ ಕಚೇರಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "கட்டண அமைப்பு பாடத்திட்டத்தின் அடிப்படையில் மாறுபடும். தயவுசெய்து அதிகாரப்பூர்வ இணையதளத்தை பார்க்கவும் அல்லது நிர்வாக அலுவலகத்தை தொடர்பு கொள்ளவும்."
+    - text: "The fee structure varies by course."
+
+  utter_accommodation:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Accommodation is available for students in hostels and nearby housing."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "छात्रों के लिए हॉस्टल और आसपास के आवास में रहने की सुविधा उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "വിദ്യാർത്ഥികൾക്ക് ഹോസ്റ്റലുകളിലും സമീപത്തെ വാസസ്ഥലങ്ങളിലും താമസ സൗകര്യം ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "విద్యార్థులకు హాస్టల్స్ మరియు సమీప గృహాలలో వసతి లభిస్తుంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ವಸತಿ ಗೃಹಗಳು ಮತ್ತು ಸಮೀಪದ ನಿವಾಸಗಳಲ್ಲಿ ವಸತಿ ಸೌಲಭ್ಯ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மாணவர்களுக்கு விடுதிகளிலும் அருகிலுள்ள வீடுகளிலும் தங்கும் வசதி கிடைக்கும்."
+    - text: "Accommodation is available for students."
+
+  utter_branch_of_study:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "We offer a variety of branches. Please check the website for the full list."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हम विभिन्न शाखाएं प्रदान करते हैं। पूरी सूची के लिए कृपया वेबसाइट देखें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞങ്ങൾ വിവിധ ശാഖകൾ വാഗ്ദാനം ചെയ്യുന്നു. പൂർണ്ണമായ ലിസ്റ്റിനായി വെബ്സൈറ്റ് പരിശോധിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మేము వివిధ శాఖలను అందిస్తున్నాము. పూర్తి జాబితా కోసం దయచేసి వెబ్‌సైట్‌ను తనిఖీ చేయండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಾವು ವಿವಿಧ ಶಾಖೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ. ಪೂರ್ಣ ಪಟ್ಟಿಗಾಗಿ ದಯವಿಟ್ಟು ವೆಬ್‌ಸೈಟ್ ಪರಿಶೀಲಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "நாங்கள் பல்வேறு கிளைகளை வழங்குகிறோம். முழுமையான பட்டியலுக்கு இணையதளத்தைப் பார்க்கவும்."
+    - text: "We offer a variety of branches. Please check the website for the full list."
+
+  utter_calendar:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The academic calendar is available on the student portal and the official website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "शैक्षणिक कैलेंडर छात्र पोर्टल और आधिकारिक वेबसाइट पर उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "അക്കാദമിക് കലണ്ടർ സ്റ്റുഡൻ്റ് പോർട്ടലിലും ഔദ്യോഗിക വെബ്സൈറ്റിലും ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "అకడమిక్ క్యాలెండర్ విద్యార్థి పోర్టల్ మరియు అధికారిక వెబ్‌సైట్‌లో అందుబాటులో ఉంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಶೈಕ್ಷಣಿಕ ಕ್ಯಾಲೆಂಡರ್ ವಿದ್ಯಾರ್ಥಿ ಪೋರ್ಟಲ್ ಮತ್ತು ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "கல்வி நாட்காட்டி மாணவர் போர்டல் மற்றும் அதிகாரப்பூர்வ இணையதளத்தில் கிடைக்கிறது."
+    - text: "The academic calendar is available on the student portal and the official website."
+
+  utter_id_card:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Student ID cards are issued by the administration office. Please bring your admission receipt and one passport-size photo."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "स्टूडेंट आईडी कार्ड प्रशासन कार्यालय द्वारा जारी किए जाते हैं। कृपया अपनी प्रवेश रसीद और एक पासपोर्ट आकार का फोटो लाएँ।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "സ്റ്റുഡന്റ് ഐഡി കാർഡുകൾ അഡ്മിനിസ്ട്രേഷൻ ഓഫീസ് നൽകുന്നു. ദയവായി നിങ്ങളുടെ അഡ്മിഷൻ രസീതും ഒരു പാസ്പോർട്ട് സൈസ് ഫോട്ടോയും കൊണ്ടുവരുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "స్టూడెంట్ ఐడి కార్డులు అడ్మినిస్ట్రేషన్ కార్యాలయం ద్వారా జారీ చేయబడతాయి. దయచేసి మీ అడ్మిషన్ రసీదు మరియు పాస్‌పోర్ట్ సైజ్ ఫోటో తీసుకురండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಿದ್ಯಾರ್ಥಿ ಐಡಿ ಕಾರ್ಡ್‌ಗಳನ್ನು ಆಡಳಿತ ಕಚೇರಿಯಿಂದ ನೀಡಲಾಗುತ್ತದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರವೇಶ ರಶೀದಿ ಮತ್ತು ಒಂದು ಪಾಸ್‌ಪೋರ್ಟ್ ಗಾತ್ರದ ಫೋಟೋ ತರಿರಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மாணவர் அடையாள அட்டைகள் நிர்வாக அலுவலகத்தால் வழங்கப்படுகின்றன. தயவுசெய்து உங்கள் சேர்க்கை ரசீதும் ஒரு பாஸ்போர்ட் அளவிலான புகைப்படமும் கொண்டு வாருங்கள்."
+    - text: "Student ID cards are issued by the administration office."
+
+
+  utter_course_structure:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The detailed course structure for each program is available in the course catalog on our website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "प्रत्येक कार्यक्रम के लिए विस्तृत पाठ्यक्रम संरचना हमारी वेबसाइट पर पाठ्यक्रम सूची में उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഓരോ പ്രോഗ്രാമിന്റെയും വിശദമായ കോഴ്‌സ് ഘടന ഞങ്ങളുടെ വെബ്‌സൈറ്റിലെ കോഴ്‌സ് കാറ്റലോഗിൽ ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ప్రతి ప్రోగ్రామ్ కోసం వివరణాత్మక కోర్సు నిర్మాణం మా వెబ్‌సైట్‌లోని కోర్సు కేటలాగ్‌లో అందుబాటులో ఉంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಪ್ರತಿ ಕಾರ್ಯಕ್ರಮದ ವಿವರವಾದ ಕೋರ್ಸ್ ರಚನೆಯು ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿನ ಕೋರ್ಸ್ ಕ್ಯಾಟಲಾಗ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "ஒவ்வொரு நிரலுக்கான விரிவான பாட அமைப்பு எங்கள் இணையதளத்தில் உள்ள பாடப் பட்டியலில் கிடைக்கிறது."
+    - text: "The detailed course structure for each program is available in the course catalog on our website."
+
+  utter_dress_code:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "There is a dress code for students. Please refer to the student handbook for specific guidelines."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "छात्रों के लिए एक ड्रेस कोड है। विशिष्ट दिशानिर्देशों के लिए कृपया छात्र पुस्तिका देखें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "വിദ്യാർത്ഥികൾക്ക് ഒരു ഡ്രസ് കോഡ് ഉണ്ട്. നിർദ്ദിഷ്‌ട മാർഗ്ഗനിർദ്ദേശങ്ങൾക്കായി ദയവായി സ്റ്റുഡൻ്റ് ഹാൻഡ്‌ബുക്ക് പരിശോധിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "విద్యార్థులకు డ్రెస్ కోడ్ ఉంది. దయచేసి నిర్దిష్ట మార్గదర్శకాల కోసం విద్యార్థి హ్యాండ్‌బుక్‌ను చూడండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಡ್ರೆಸ್ ಕೋಡ್ ಇದೆ. ನಿರ್ದಿಷ್ಟ ಮಾರ್ಗಸೂಚಿಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ವಿದ್ಯಾರ್ಥಿ ಕೈಪಿಡಿಯನ್ನು ನೋಡಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மாணவர்களுக்கு ஆடை விதிமுறைகள் உள்ளன. குறிப்பிட்ட வழிகாட்டுதல்களுக்கு மாணவர் கையேட்டைப் பார்க்கவும்."
+    - text: "There is a dress code for students. Please refer to the student handbook for specific guidelines."
+
+  utter_faculty:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Information about our esteemed faculty members can be found in the 'Faculty' section of our website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हमारे सम्मानित संकाय सदस्यों के बारे में जानकारी हमारी वेबसाइट के 'संकाय' अनुभाग में पाई जा सकती है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞങ്ങളുടെ ആദരണീയരായ ഫാക്കൽറ്റി അംഗങ്ങളെക്കുറിച്ചുള്ള വിവരങ്ങൾ ഞങ്ങളുടെ വെബ്‌സൈറ്റിലെ 'ഫാക്കൽറ്റി' വിഭാഗത്തിൽ കാണാം."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మా గౌరవనీయమైన ఫ్యాకల్టీ సభ్యుల గురించిన సమాచారాన్ని మా వెబ్‌సైట్‌లోని 'ఫ్యాకల్టీ' విభాగంలో కనుగొనవచ్చు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಮ್ಮ ಗೌರವಾನ್ವಿತ ಬೋಧಕವರ್ಗದ ಸದಸ್ಯರ ಬಗೆಗಿನ ಮಾಹಿತಿಯನ್ನು ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನ 'ಬೋಧಕವರ್ಗ' ವಿಭಾಗದಲ್ಲಿ ಕಾಣಬಹುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "எங்கள் மதிப்பிற்குரிய ஆசிரிய உறுப்பினர்கள் பற்றிய தகவல்களை எங்கள் இணையதளத்தின் 'ஆசிரியர்கள்' பிரிவில் காணலாம்."
+    - text: "Information about our esteemed faculty members can be found in the 'Faculty' section of our website."
+
+  utter_food:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The campus cafeteria offers a variety of food options. For the menu and timings, please check the notice board."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कैंपस कैफेटेरिया में विभिन्न प्रकार के भोजन के विकल्प उपलब्ध हैं। मेनू और समय के लिए, कृपया सूचना बोर्ड देखें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ക്യാമ്പസ് കഫറ്റീരിയയിൽ പലതരം ഭക്ഷണ ഓപ്ഷനുകൾ ലഭ്യമാണ്. മെനുവിനും സമയത്തിനും, ദയവായി നോട്ടീസ് ബോർഡ് പരിശോധിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "క్యాంపస్ ఫలహారశాలలో అనేక రకాల ఆహార ఎంపికలు అందుబాటులో ఉన్నాయి. మెను మరియు సమయాల కోసం, దయచేసి నోటీసు బోర్డును తనిఖీ చేయండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕ್ಯಾಂಪಸ್ ಕೆಫೆಟೇರಿಯಾವು ವಿವಿಧ ಆಹಾರ ಆಯ್ಕೆಗಳನ್ನು ನೀಡುತ್ತದೆ. ಮೆನು ಮತ್ತು ಸಮಯಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನೋಟಿಸ್ ಬೋರ್ಡ್ ಪರಿಶೀಲಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "வளாக உணவகத்தில் பல்வேறு உணவு விருப்பங்கள் உள்ளன. மெனு மற்றும் நேரங்களுக்கு, அறிவிப்பு பலகையை சரிபார்க்கவும்."
+    - text: "The campus cafeteria offers a variety of food options. For the menu and timings, please check the notice board."
+
+  utter_holidays:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The list of official holidays is in the academic calendar on the website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "आधिकारिक छुट्टियों की सूची वेबसाइट पर शैक्षणिक कैलेंडर में है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഔദ്യോഗിക അവധി ദിവസങ്ങളുടെ ലിസ്റ്റ് വെബ്സൈറ്റിലെ അക്കാദമിക് കലണ്ടറിൽ ഉണ്ട്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "అధికారిక సెలవుల జాబితా వెబ్‌సైట్‌లోని అకడమిక్ క్యాలెండర్‌లో ఉంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಅಧಿಕೃತ ರಜಾದಿನಗಳ ಪಟ್ಟಿ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿನ ಶೈಕ್ಷಣಿಕ ಕ್ಯಾಲೆಂಡರ್‌ನಲ್ಲಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "அதிகாரப்பூர்வ விடுமுறை நாட்களின் பட்டியல் இணையதளத்தில் உள்ள கல்வி நாட்காட்டியில் உள்ளது."
+    - text: "The list of official holidays is in the academic calendar on the website."
+
+  utter_hostel:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Hostel facilities are available. For room allocation and rules, please contact the hostel warden."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "छात्रावास की सुविधा उपलब्ध है। कमरे के आवंटन और नियमों के लिए, कृपया छात्रावास वार्डन से संपर्क करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഹോസ്റ്റൽ സൗകര്യങ്ങൾ ലഭ്യമാണ്. റൂം അനുവദിക്കുന്നതിനും നിയമങ്ങൾക്കും, ദയവായി ഹോസ്റ്റൽ വാർഡനുമായി ബന്ധപ്പെടുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "హాస్టల్ సౌకర్యాలు అందుబాటులో ఉన్నాయి. గది కేటాయింపు మరియు నియమాల కోసం, దయచేసి హాస్టల్ వార్డెన్‌ను సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಸತಿ ನಿಲಯದ ಸೌಲಭ್ಯಗಳು ಲಭ್ಯವಿದೆ. ಕೊಠಡಿ ಹಂಚಿಕೆ ಮತ್ತು ನಿಯಮಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಹಾಸ್ಟೆಲ್ ವಾರ್ಡನ್ ಅವರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "விடுதி வசதிகள் உள்ளன. அறை ஒதுக்கீடு மற்றும் விதிகளுக்கு, விடுதி காப்பாளரை தொடர்பு கொள்ளவும்."
+    - text: "Hostel facilities are available. For room allocation and rules, please contact the hostel warden."
+
+  utter_jobs:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "For job opportunities and placements, please contact our career services department."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "नौकरी के अवसरों और प्लेसमेंट के लिए, कृपया हमारे करियर सेवा विभाग से संपर्क करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "തൊഴിലവസരങ്ങൾക്കും പ്ലേസ്മെൻ്റിനും, ദയവായി ഞങ്ങളുടെ കരിയർ സേവന വിഭാഗവുമായി ബന്ധപ്പെടുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ఉద్యోగ అవకాశాలు మరియు ప్లేస్‌మెంట్‌ల కోసం, దయచేసి మా కెరీర్ సేవల విభాగాన్ని సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಉದ್ಯೋಗಾವಕಾಶಗಳು ಮತ್ತು ನಿಯೋಜನೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನಮ್ಮ ವೃತ್ತಿ ಸೇವೆಗಳ ವಿಭಾಗವನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "வேலை வாய்ப்புகள் மற்றும் வேலைவாய்ப்புகளுக்கு, எங்கள் தொழில் சேவைத் துறையைத் தொடர்பு கொள்ளவும்."
+    - text: "For job opportunities and placements, please contact our career services department."
+
+  utter_library:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The library is open from 9 AM to 8 PM on weekdays. You can find the online catalog on the website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "पुस्तकालय सप्ताह के दिनों में सुबह 9 बजे से रात 8 बजे तक खुला रहता है। आप ऑनलाइन कैटलॉग वेबसाइट पर देख सकते हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ലൈബ്രറി പ്രവൃത്തിദിവസങ്ങളിൽ രാവിലെ 9 മുതൽ രാത്രി 8 വരെ തുറന്നിരിക്കും. നിങ്ങൾക്ക് വെബ്സൈറ്റിൽ ഓൺലൈൻ കാറ്റലോഗ് കണ്ടെത്താം."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "గ్రంథాలయం వారపు రోజులలో ఉదయం 9 గంటల నుండి రాత్రి 8 గంటల వరకు తెరిచి ఉంటుంది. మీరు వెబ్‌సైట్‌లో ఆన్‌లైన్ కేటలాగ్‌ను కనుగొనవచ్చు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಗ್ರಂಥಾಲಯವು ವಾರದ ದಿನಗಳಲ್ಲಿ ಬೆಳಿಗ್ಗೆ 9 ರಿಂದ ರಾತ್ರಿ 8 ರವರೆಗೆ ತೆರೆದಿರುತ್ತದೆ. ನೀವು ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಕ್ಯಾಟಲಾಗ್ ಅನ್ನು ಕಾಣಬಹುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "நூலகம் வார நாட்களில் காலை 9 மணி முதல் இரவு 8 மணி வரை திறந்திருக்கும். நீங்கள் இணையதளத்தில் ஆன்லைன் பட்டியலைக் காணலாம்."
+    - text: "The library is open from 9 AM to 8 PM on weekdays. You can find the online catalog on the website."
+
+  utter_marks:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "You can view your marks by logging into the student portal."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "आप छात्र पोर्टल में लॉग इन करके अपने अंक देख सकते हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "സ്റ്റുഡൻ്റ് പോർട്ടലിൽ ലോഗിൻ ചെയ്ത് നിങ്ങളുടെ മാർക്കുകൾ കാണാവുന്നതാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మీరు విద్యార్థి పోర్టల్‌లోకి లాగిన్ చేయడం ద్వారా మీ మార్కులను చూడవచ్చు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವಿದ್ಯಾರ್ಥಿ ಪೋರ್ಟಲ್‌ಗೆ ಲಾಗಿನ್ ಮಾಡುವ ಮೂಲಕ ನಿಮ್ಮ ಅಂಕಗಳನ್ನು ನೀವು ವೀಕ್ಷಿಸಬಹುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "மாணவர் போர்ட்டலில் உள்நுழைந்து உங்கள் மதிப்பெண்களை நீங்கள் பார்க்கலாம்."
+    - text: "You can view your marks by logging into the student portal."
+
+  utter_marksheet:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Marksheets are distributed by the examination office after the results are declared."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "परिणाम घोषित होने के बाद परीक्षा कार्यालय द्वारा अंकपत्र वितरित किए जाते हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഫലം പ്രഖ്യാപിച്ചതിന് ശേഷം പരീക്ഷാ ഓഫീസ് മാർക്ക് ഷീറ്റുകൾ വിതരണം ചെയ്യും."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ఫలితాలు ప్రకటించిన తర్వాత పరీక్షా కార్యాలయం ద్వారా మార్క్‌షీట్లు పంపిణీ చేయబడతాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಫಲಿತಾಂಶಗಳನ್ನು ಘೋಷಿಸಿದ ನಂತರ ಪರೀಕ್ಷಾ ಕಚೇರಿಯಿಂದ ಅಂಕಪಟ್ಟಿಗಳನ್ನು ವಿತರಿಸಲಾಗುತ್ತದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "தேர்வு முடிவுகள் அறிவிக்கப்பட்ட பிறகு தேர்வு அலுவலகத்தால் மதிப்பெண் பட்டியல்கள் விநியோகிக்கப்படுகின்றன."
+    - text: "Marksheets are distributed by the examination office after the results are declared."
+
+  utter_parent_query:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "For parent-related queries, please contact the administration office directly during working hours."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "अभिभावकों से संबंधित प्रश्नों के लिए, कृपया काम के घंटों के दौरान सीधे प्रशासन कार्यालय से संपर्क करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "രക്ഷകർത്താക്കളുമായി ബന്ധപ്പെട്ട ചോദ്യങ്ങൾക്ക്, പ്രവൃത്തി സമയങ്ങളിൽ നേരിട്ട് അഡ്മിനിസ്ട്രേഷൻ ഓഫീസുമായി ബന്ധപ്പെടുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "తల్లిదండ్రులకు సంబంధించిన ప్రశ్నల కోసం, దయచేసి పని వేళల్లో నేరుగా పరిపాలన కార్యాలయాన్ని సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಪೋಷಕ-ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಕೆಲಸದ ಸಮಯದಲ್ಲಿ ನೇರವಾಗಿ ಆಡಳಿತ ಕಚೇರಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "பெற்றோர் தொடர்பான கேள்விகளுக்கு, வேலை நேரத்தில் நேரடியாக நிர்வாக அலுவலகத்தை தொடர்பு கொள்ளவும்."
+    - text: "For parent-related queries, please contact the administration office directly during working hours."
+
+  utter_placements:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Our college has a dedicated placement cell. You can find placement statistics on our website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हमारे कॉलेज में एक समर्पित प्लेसमेंट सेल है। आप हमारी वेबसाइट पर प्लेसमेंट के आंकड़े देख सकते हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞങ്ങളുടെ കോളേജിന് ഒരു സമർപ്പിത പ്ലേസ്മെൻ്റ് സെൽ ഉണ്ട്. ഞങ്ങളുടെ വെബ്സൈറ്റിൽ നിങ്ങൾക്ക് പ്ലേസ്മെൻ്റ് സ്ഥിതിവിവരക്കണക്കുകൾ കണ്ടെത്താൻ കഴിയും."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మా కళాశాలలో ప్రత్యేక ప్లేస్‌మెంట్ సెల్ ఉంది. మీరు మా వెబ్‌సైట్‌లో ప్లేస్‌మెంట్ గణాంకాలను కనుగొనవచ్చు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಮ್ಮ ಕಾಲೇಜಿನಲ್ಲಿ ಮೀಸಲಾದ ನಿಯೋಜನೆ ಕೋಶವಿದೆ. ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ನೀವು ನಿಯೋಜನೆ ಅಂಕಿಅಂಶಗಳನ್ನು ಕಾಣಬಹುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "எங்கள் கல்லூரியில் ஒரு பிரத்யேக வேலைவாய்ப்பு பிரிவு உள்ளது. எங்கள் இணையதளத்தில் வேலை வாய்ப்பு புள்ளிவிவரங்களை நீங்கள் காணலாம்."
+    - text: "Our college has a dedicated placement cell. You can find placement statistics on our website."
+
+  utter_recruitment:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Recruitment drives are organized by the placement cell. You will be notified of the schedule."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "भर्ती अभियान प्लेसमेंट सेल द्वारा आयोजित किए जाते हैं। आपको कार्यक्रम की सूचना दी जाएगी।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "പ്ലേസ്മെൻ്റ് സെൽ റിക്രൂട്ട്മെൻ്റ് ഡ്രൈവുകൾ സംഘടിപ്പിക്കുന്നു. ഷെഡ്യൂൾ നിങ്ങളെ അറിയിക്കും."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "నియామక డ్రైవ్‌లు ప్లేస్‌మెంట్ సెల్ ద్వారా నిర్వహించబడతాయి. షెడ్యూల్ మీకు తెలియజేయబడుతుంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನೇಮಕಾತಿ ಡ್ರೈವ್‌ಗಳನ್ನು ನಿಯೋಜನೆ ಕೋಶದಿಂದ ಆಯೋಜಿಸಲಾಗಿದೆ. ವೇಳಾಪಟ್ಟಿಯನ್ನು ನಿಮಗೆ ತಿಳಿಸಲಾಗುವುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "ஆட்சேர்ப்பு முகாம்கள் வேலைவாய்ப்பு பிரிவால் ஏற்பாடு செய்யப்படுகின்றன. அட்டவணை உங்களுக்கு அறிவிக்கப்படும்."
+    - text: "Recruitment drives are organized by the placement cell. You will be notified of the schedule."
+
+  utter_results:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Results are published on the student portal and the official website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "परिणाम छात्र पोर्टल और आधिकारिक वेबसाइट पर प्रकाशित किए जाते हैं।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഫലങ്ങൾ സ്റ്റുഡൻ്റ് പോർട്ടലിലും ഔദ്യോഗിക വെബ്സൈറ്റിലും പ്രസിദ്ധീകരിക്കും."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ఫలితాలు విద్యార్థి పోర్టల్ మరియు అధికారిక వెబ్‌సైట్‌లో ప్రచురించబడతాయి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಫಲಿತಾಂಶಗಳನ್ನು ವಿದ್ಯಾರ್ಥಿ ಪೋರ್ಟಲ್ ಮತ್ತು ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಪ್ರಕಟಿಸಲಾಗುತ್ತದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "தேர்வு முடிவுகள் மாணவர் போர்டல் மற்றும் அதிகாரப்பூர்வ இணையதளத்தில் வெளியிடப்படுகின்றன."
+    - text: "Results are published on the student portal and the official website."
+
+  utter_studies:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "For any questions about your studies, please consult your academic advisor or the respective department head."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "अपनी पढ़ाई के बारे में किसी भी प्रश्न के लिए, कृपया अपने शैक्षणिक सलाहकार या संबंधित विभागाध्यक्ष से परामर्श करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "നിങ്ങളുടെ പഠനത്തെക്കുറിച്ചുള്ള ഏത് ചോദ്യങ്ങൾക്കും, ദയവായി നിങ്ങളുടെ അക്കാദമിക് ഉപദേശകനെയോ അതത് വകുപ്പ് മേധാവിയെയോ സമീപിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మీ చదువులకు సంబంధించిన ఏవైనా ప్రశ్నల కోసం, దయచేసి మీ విద్యా సలహాదారుని లేదా సంబంధిత విభాగాధిపతిని సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಿಮ್ಮ ಅಧ್ಯಯನದ ಕುರಿತು ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿಗೆ, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಶೈಕ್ಷಣಿಕ ಸಲಹೆಗಾರರನ್ನು ಅಥವಾ ಆಯಾ ವಿಭಾಗದ ಮುಖ್ಯಸ್ಥರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "உங்கள் படிப்பு தொடர்பான ஏதேனும் கேள்விகளுக்கு, உங்கள் கல்வி ஆலோசகர் அல்லது அந்தந்த துறைத் தலைவரை அணுகவும்."
+    - text: "For any questions about your studies, please consult your academic advisor or the respective department head."
+
+  utter_syllabus:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The syllabus for each course is available on the department's page on the college website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "प्रत्येक पाठ्यक्रम का सिलेबस कॉलेज की वेबसाइट पर विभाग के पेज पर उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഓരോ കോഴ്സിൻ്റെയും സിലബസ് കോളേജ് വെബ്സൈറ്റിലെ ഡിപ്പാർട്ട്മെൻ്റ് പേജിൽ ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "ప్రతి కోర్సు యొక్క సిలబస్ కళాశాల వెబ్‌సైట్‌లోని విభాగం పేజీలో అందుబాటులో ఉంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಪ್ರತಿ ಕೋರ್ಸ್‌ನ ಪಠ್ಯಕ್ರಮವು ಕಾಲೇಜು ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿನ ವಿಭಾಗದ ಪುಟದಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "ஒவ்வொரு பாடத்திற்கான பாடத்திட்டமும் கல்லூரி இணையதளத்தில் உள்ள துறையின் பக்கத்தில் கிடைக்கிறது."
+    - text: "The syllabus for each course is available on the department's page on the college website."
+
+  utter_teaching:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Our teaching methodology focuses on a blend of theoretical knowledge and practical application."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हमारी शिक्षण पद्धति सैद्धांतिक ज्ञान और व्यावहारिक अनुप्रयोग के मिश्रण पर केंद्रित है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ഞങ്ങളുടെ അധ്യാപന രീതി സൈദ്ധാന്തിക പരിജ്ഞാനത്തിൻ്റെയും പ്രായോഗിക പ്രയോഗത്തിൻ്റെയും ഒരു മിശ്രിതത്തിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "మా బోధనా పద్ధతి సైద్ధాంతిక పరిజ్ఞానం మరియు ఆచరణాత్మక అనువర్తనం యొక్క మిశ్రమంపై దృష్టి పెడుతుంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ನಮ್ಮ ಬೋಧನಾ ವಿಧಾನವು ಸೈದ್ಧಾಂತಿಕ ಜ್ಞಾನ ಮತ್ತು ಪ್ರಾಯೋಗಿಕ ಅನ್ವಯದ ಮಿಶ್ರಣದ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸುತ್ತದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "எங்கள் கற்பித்தல் முறை தத்துவார்த்த அறிவு மற்றும் நடைமுறை பயன்பாடு ஆகியவற்றின் கலவையில் கவனம் செலுத்துகிறது."
+    - text: "Our teaching methodology focuses on a blend of theoretical knowledge and practical application."
+
+  utter_timetable:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The class timetable is available on the student portal and on the department notice board."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कक्षा की समय-सारणी छात्र पोर्टल पर और विभाग के सूचना पट्ट पर उपलब्ध है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "ക്ലാസ് ടൈംടേബിൾ സ്റ്റുഡൻ്റ് പോർട്ടലിലും ഡിപ്പാർട്ട്മെൻ്റ് നോട്ടീസ് ബോർഡിലും ലഭ്യമാണ്."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "తరగతి టైమ్‌టేబుల్ విద్యార్థి పోర్టల్‌లో మరియు డిపార్ట్‌మెంట్ నోటీసు బోర్డులో అందుబాటులో ఉంది."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ವರ್ಗ ವೇಳಾಪಟ್ಟಿಯು ವಿದ್ಯಾರ್ಥಿ ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಮತ್ತು ವಿಭಾಗದ ಸೂಚನಾ ಫಲಕದಲ್ಲಿ ಲಭ್ಯವಿದೆ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "வகுப்பு நேர அட்டவணை மாணவர் போர்டல் மற்றும் துறை அறிவிப்பு பலகையில் கிடைக்கிறது."
+    - text: "The class timetable is available on the student portal and on the department notice board."
+
+  utter_transportation:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The college provides bus services from various points in the city. For routes and timings, please contact the transport office."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "कॉलेज शहर के विभिन्न स्थानों से बस सेवाएं प्रदान करता है। मार्गों और समय के लिए, कृपया परिवहन कार्यालय से संपर्क करें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "നഗരത്തിലെ വിവിധ സ്ഥലങ്ങളിൽ നിന്ന് കോളേജ് ബസ് സർവീസുകൾ നൽകുന്നു. റൂട്ടുകൾക്കും സമയത്തിനും, ദയവായി ട്രാൻസ്പോർട്ട് ഓഫീസുമായി ബന്ധപ്പെടുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "కళాశాల నగరంలోని వివిధ ప్రాంతాల నుండి బస్సు సేవలను అందిస్తుంది. మార్గాలు మరియు సమయాల కోసం, దయచేసి రవాణా కార్యాలయాన్ని సంప్రదించండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕಾಲೇಜು ನಗರದ ವಿವಿಧ ಸ್ಥಳಗಳಿಂದ ಬಸ್ ಸೇವೆಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. ಮಾರ್ಗಗಳು ಮತ್ತು ಸಮಯಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ಸಾರಿಗೆ ಕಚೇರಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "கல்லூரி நகரின் பல்வேறு இடங்களிலிருந்து பேருந்து சேவைகளை வழங்குகிறது. வழிகள் மற்றும் நேரங்களுக்கு, போக்குவரத்து அலுவலகத்தை தொடர்பு கொள்ளவும்."
+    - text: "The college provides bus services from various points in the city. For routes and timings, please contact the transport office."
+
+  utter_uniform:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "Yes, there is a uniform. Details can be found in the student handbook."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "हाँ, एक यूनिफॉर्म है। विवरण छात्र पुस्तिका में पाया जा सकता है।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "അതെ, ഒരു യൂണിഫോം ഉണ്ട്. വിശദാംശങ്ങൾ സ്റ്റുഡൻ്റ് ഹാൻഡ്ബുക്കിൽ കാണാം."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "అవును, యూనిఫాం ఉంది. వివరాలను విద్యార్థి హ్యాండ్‌బుక్‌లో కనుగొనవచ్చు."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಹೌದು, ಸಮವಸ್ತ್ರವಿದೆ. ವಿವರಗಳನ್ನು ವಿದ್ಯಾರ್ಥಿ ಕೈಪಿಡಿಯಲ್ಲಿ ಕಾಣಬಹುದು."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "ஆம், ஒரு சீருடை உள்ளது. விவரங்களை மாணவர் கையேட்டில் காணலாம்."
+    - text: "Yes, there is a uniform. Details can be found in the student handbook."
+
+  utter_years_of_study:
+    - condition: [{name: language, type: slot, value: en}]
+      text: "The duration of the course depends on the program you are enrolled in. Please check the program details on the website."
+    - condition: [{name: language, type: slot, value: hi}]
+      text: "पाठ्यक्रम की अवधि आपके द्वारा नामांकित कार्यक्रम पर निर्भर करती है। कृपया वेबसाइट पर कार्यक्रम का विवरण देखें।"
+    - condition: [{name: language, type: slot, value: ml}]
+      text: "കോഴ്‌സിൻ്റെ കാലാവധി നിങ്ങൾ ചേർന്ന പ്രോഗ്രാമിനെ ആശ്രയിച്ചിരിക്കുന്നു. ദയവായി വെബ്സൈറ്റിൽ പ്രോഗ്രാം വിശദാംശങ്ങൾ പരിശോധിക്കുക."
+    - condition: [{name: language, type: slot, value: te}]
+      text: "కోర్సు యొక్క వ్యవధి మీరు నమోదు చేసుకున్న ప్రోగ్రామ్‌పై ఆధారపడి ఉంటుంది. దయచేసి వెబ్‌సైట్‌లో ప్రోగ్రామ్ వివరాలను తనిఖీ చేయండి."
+    - condition: [{name: language, type: slot, value: kn}]
+      text: "ಕೋರ್ಸ್‌ನ ಅವಧಿಯು ನೀವು ದಾಖಲಾದ ಕಾರ್ಯಕ್ರಮವನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಕಾರ್ಯಕ್ರಮದ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ."
+    - condition: [{name: language, type: slot, value: ta}]
+      text: "பாடநெறியின் காலம் நீங்கள் சேர்ந்திருக்கும் திட்டத்தைப் பொறுத்தது. இணையதளத்தில் நிரல் விவரங்களைச் சரிபார்க்கவும்."
+    - text: "The duration of the course depends on the program you are enrolled in. Please check the program details on the website."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

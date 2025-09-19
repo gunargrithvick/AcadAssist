@@ -1,0 +1,86 @@
+version: "3.1"
+
+stories:
+- story: greet and ask about branch of study
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: branch_of_study
+    - action: utter_branch_of_study
+
+- story: greet and ask fee structure
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: fee_structure
+    - action: utter_fee_structure
+
+- story: greet and ask timetable
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: timetable
+    - action: utter_timetable
+
+- story: greet and ask ID card
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: id_card
+    - action: utter_id_card
+
+- story: greet and ask results
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: results
+    - action: utter_results
+
+- story: greet and ask admissions
+  steps:
+    - action: action_set_language
+    - intent: greet
+    - action: utter_greet
+    - action: action_set_language
+    - intent: admissions
+    - action: utter_admissions
+
+- story: help flow
+  steps:
+    - action: action_set_language
+    - intent: help
+    - action: utter_help
+
+- story: affirm response
+  steps:
+    - action: action_set_language
+    - intent: affirm
+    - action: utter_affirm
+
+- story: deny response
+  steps:
+    - action: action_set_language
+    - intent: deny
+    - action: utter_deny
+
+- story: goodbye flow
+  steps:
+    - action: action_set_language
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: fallback handling
+  steps:
+    - action: action_set_language
+    - intent: nlu_fallback
+    - action: utter_out_of_scope

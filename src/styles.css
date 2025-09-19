@@ -1,0 +1,222 @@
+/* * General Styling & Page Background
+ */
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #0D1117; /* Dark background color */
+    font-family: 'Inter', sans-serif;
+    color: #C9D1D9; /* Light text color */
+    overflow: hidden;
+}
+
+/* Main App Shell from App.jsx */
+.app-shell {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.app-header {
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #F0F6FC; /* Lighter header title */
+  margin: 0;
+}
+
+.app-header .subtitle {
+  font-size: 1.1rem;
+  color: #8B949E; /* Muted subtitle color */
+  margin-top: 0.5rem;
+}
+
+/* This makes the main area flexible */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* * Main Chatbot Container
+ */
+.chatbot-container {
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    background: #161B22; /* Darker container background */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #30363D; /* Darker border */
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+/* * Chatbot Header
+ */
+.chatbot-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30363D;
+    background-color: #161B22; /* Match container background */
+}
+
+.chatbot-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #F0F6FC; /* Light header title */
+}
+
+/* Online status indicator */
+.chatbot-header .status {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #39D353; /* Green "Online" text */
+}
+
+.chatbot-header .status-dot {
+    width: 9px;
+    height: 9px;
+    background: #39D353;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 5px #39d35344;
+}
+
+/* * Messages Display Area
+ */
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #161B22; /* Match container background */
+}
+
+/* Custom scrollbar for webkit browsers */
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+.chatbot-messages::-webkit-scrollbar-track {
+    background: #161B22;
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: #30363D;
+    border-radius: 6px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Bot messages styling */
+.message.bot {
+    background: #213D5B; /* Dark blue background */
+    color: #F0F6FC; /* Light text */
+    align-self: flex-start;
+    border-top-left-radius: 6px;
+}
+
+/* User messages styling */
+.message.user {
+    background: #5865F2; /* Darker blue/purple for user message */
+    color: #ffffff; /* White text */
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+}
+
+/* * Footer & Input Area
+ */
+.chatbot-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #161B22; /* Match container background */
+    border-top: 1px solid #30363D;
+}
+
+.chatbot-footer input {
+    flex: 1;
+    padding: 12px 18px;
+    background: #0D1117; /* Even darker input background */
+    border: 1px solid #30363D;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+    color: #F0F6FC;
+    transition: border-color 0.2s;
+}
+
+.chatbot-footer input:focus {
+    border-color: #1F6FEB; /* Blue border on focus */
+}
+
+.chatbot-footer input::placeholder {
+    color: #8B949E;
+}
+
+/* Send and Mic buttons styling */
+.chatbot-footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.send-btn {
+     background: #1F6FEB; /* Blue send button */
+}
+
+.send-btn:hover {
+    background: #388BFD;
+}
+
+.send-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #ffffff;
+}
+
+.mic-btn {
+    background: transparent;
+}
+
+.mic-btn:hover {
+    background-color: #30363d60;
+}
+
+.mic-btn svg {
+    width: 22px;
+    height: 22px;
+    stroke: #8B949E;
+}
